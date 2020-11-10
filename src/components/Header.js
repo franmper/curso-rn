@@ -1,9 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import {AntDesign} from "@expo/vector-icons"
-
-const {width, height} = Dimensions.get("window")
+import { colors, width, height } from "../theme";
 
 const Header = ({ previous, navigation }) => {
   const route = useRoute()
@@ -11,7 +10,7 @@ const Header = ({ previous, navigation }) => {
     <View style={styles.container}>
       {
         previous ? (
-          <AntDesign name="left" size={24} color="white" onPress={() => navigation.goBack()}/>
+          <AntDesign backgroundColor="none" name="left" size={30} color={colors.pink}  onPress={() => navigation.goBack()}/>
         ) : null
       }
       <Text style={styles.title}>{route.name}</Text>
@@ -27,13 +26,13 @@ const styles = StyleSheet.create({
     width: width,
     height: height * 0.08,
     paddingHorizontal: width * 0.01,
-    backgroundColor: "blue",
+    backgroundColor: colors.blue,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
   },
   title: {
     fontSize: 20,
-    color: "white",
+    color: colors.pink,
   }
 });

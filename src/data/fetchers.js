@@ -8,6 +8,18 @@ const popularMovies = async () => {
   return data
 }
 
+const getMovie = async (id) => {
+  const data = await Axios.get(`${apiUrl}/movie/${id}?api_key=${apiKey}&language=es-AR`);
+  return data;
+}
+
+const getVideos = async (id) => {
+  const data = await Axios.get(`${apiUrl}/movie/${id}?api_key=${apiKey}&language=es-AR`);
+  return data;
+}
+
 export {
-  popularMovies
+  popularMovies,
+  getMovie,
+  getVideos
 }

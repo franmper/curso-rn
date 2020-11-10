@@ -1,12 +1,11 @@
 import React from 'react'
-import { View, ActivityIndicator, Dimensions, StyleSheet } from 'react-native'
-
-const {width, height} = Dimensions.get("window")
+import { View, ActivityIndicator, StyleSheet } from 'react-native'
+import { colors, width, height } from "../theme";
 
 export const Loading = () => {
   return (
     <View style={styles.container}>
-      <ActivityIndicator color={"blue"} size={"large"} />
+      <ActivityIndicator color={colors.pink} size={"large"} />
     </View>
   )
 }
@@ -17,5 +16,6 @@ const styles = StyleSheet.create({
     height: height,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: colors.blue
   },
 })

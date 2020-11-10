@@ -1,24 +1,39 @@
 import React from "react";
-import {View, Text, Pressable, StyleSheet} from "react-native";
-import {AllMovies} from "../components/AllMovies";
+import { View, Text, StyleSheet } from "react-native";
+import { AllMovies } from "../components/AllMovies";
+import { colors, width, height, currentHeight } from "../theme";
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   return (
-    <View>
-      <Text>Home</Text>
-      <Pressable style={styles.button} onPress={() => navigation.navigate("Movie")}>
-        <Text style={{color: "#fff"}}>Ir a movie</Text>
-      </Pressable>
+    <View style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Movie App</Text>
+      </View>
       <AllMovies navigation={navigation} />
     </View>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
 
 const styles = StyleSheet.create({
-  button: {
-    padding: 30,
-    backgroundColor: "red",
-  }
-})
+  container: {
+    paddingTop: currentHeight,
+    flex: 1,
+    backgroundColor: colors.blue,
+    alignItems: "center",
+  },
+  titleContainer: {
+    height: height * 0.1,
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row"
+  },
+  title: {
+    width: width,
+    textAlign: "center",
+    color: colors.pink,
+    fontSize: 50,
+    marginLeft: 10
+  },
+});

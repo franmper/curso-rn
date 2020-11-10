@@ -15,7 +15,7 @@ const MovieNavigator = () => {
       ...TransitionPresets.SlideFromRightIOS
     }}>
       <MovieScreen name="Home" component={Home} options={{
-        headerShown: true,
+        headerShown: false,
       }}/>
       <MovieScreen name="Movie" component={Movie} options={{
         headerMode: "screen",
