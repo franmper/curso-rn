@@ -3,6 +3,7 @@ import {View, Text} from "react-native";
 import {createStackNavigator, TransitionPresets} from "@react-navigation/stack"
 import Home from "../screens/Home"
 import Movie from "../screens/Movie"
+import Search from "../screens/Search"
 import Header from "../components/Header";
 
 const MovieStack = createStackNavigator();
@@ -18,6 +19,14 @@ const MovieNavigator = () => {
         headerShown: false,
       }}/>
       <MovieScreen name="Movie" component={Movie} options={{
+        headerMode: "screen",
+        header: ({previous, navigation}) => {
+          return (
+            <Header previous={previous} navigation={navigation} />
+          )
+        }
+      }}/>
+      <MovieScreen name="Search" component={Search} options={{
         headerMode: "screen",
         header: ({previous, navigation}) => {
           return (
